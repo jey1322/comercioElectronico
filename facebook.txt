@@ -1,2 +1,4 @@
 
 IDENTIFICADOR DE LA APP: 943523969338276
+
+clave secreta: 31eebd0312dfd7f9f43e3b7ea00c3dea
