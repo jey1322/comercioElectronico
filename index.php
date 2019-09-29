@@ -121,9 +121,24 @@
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="img/lib1.jpg" alt=""></a>
                             <div class="card-body">
-                                <h4 class="card-title">
-                                    <a href="#">libro Bodas de Sangre</a>
-                                </h4>
+                                <?php
+                                    $mysqli=new mysqli("localhost","root","","viplib");
+                                    $comando="SELECT nombre from libro where nombre='Bodas de Sangre' and cantidad > 0";
+                                    $resultado=$mysqli->query($comando);
+                                    if ($resultado->num_rows==0)
+                                    {
+                                        echo"<h4>
+                                    Agotados
+                                </h4>";
+                                    }
+                                    else
+                                    {
+                                        echo $usr['nombre'];
+                                    }
+                                ?>
+                                <!-- <h4 class="card-title"> -->
+                                    <!-- <a href="#">libro Bodas de Sangre</a> -->
+                                <!-- </h4> -->
                                 <h5>$9.99</h5>
                                 <p class="card-text">Bodas de sangre es una tragedia en versos y en prosas del escritor español Federico Garcia Lorca</p>
                             </div>
