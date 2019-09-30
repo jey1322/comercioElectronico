@@ -1,3 +1,6 @@
+<?php
+require_once 'app/start.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,6 +54,21 @@
         <div class="row">
 
             <div class="col-lg-3">
+            
+                <?php
+                    if (!isset($_SESSION['facebook']))
+                    { ?>
+                    <p>no ha iniciado sesion</p>
+                    <?php
+                    }
+                    else
+                    {
+                    ?>
+                        <p>Bienvenido
+                            <?php echo $facebook_user->getName(); ?>
+                        </p>
+                    
+                        <?php }?>
 
                 <h1 class="my-4">Vip-Lib</h1>
                 <div class="list-group">

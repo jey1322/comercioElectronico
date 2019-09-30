@@ -1,3 +1,6 @@
+<?php
+require_once 'app/start.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +26,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
+            
             <h5 class="navbar-brand">"Los mejores en precios"</h5>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -52,6 +56,21 @@
 
 
             <div class="col-lg-12">
+            
+                <?php
+                    if (!isset($_SESSION['facebook']))
+                    { ?>
+                    <p>no ha iniciado sesion</p>
+                    <?php
+                    }
+                    else
+                    {
+                    ?>
+                        <p>Bienvenido
+                            <?php echo $facebook_user->getName(); ?>
+                        </p>
+                    
+                        <?php }?><br>
                 <h1>Acerca</h1>
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">

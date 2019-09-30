@@ -41,8 +41,12 @@ require_once 'app/start.php';
                         <a class="nav-link" href="acerca.php">Acerca de los desarrolladores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sesion.php">Iniciar sesion</a>
+                        <a class="nav-link" href="sesion.php">Iniciar sesion / cerrar sesion</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="configuracion.php">configuracion de la cuenta</a>
+                    </li>
+                    
 
                 </ul>
             </div>
