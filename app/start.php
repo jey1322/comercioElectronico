@@ -11,5 +11,16 @@ use Facebook\GraphObject;
 use Facebook\FacebookRequestException;
 
 FacebookSession::setDefaultAplication($config['app_id'],$config['app_secret']);
-$helper= new FacebookRedirectLoginHelper('http://localhost/') 
+$helper= new FacebookRedirectLoginHelper('http://localhost/pow/comercioElectronico/sesion.php');
+try{
+    $session= $helper ->getSessionFromRedirect();
+    if ($session)
+    {
+        $_SESSION['facebook']=$session->getToken();
+    }
+}catch(Facebook\Exception\FacebookResponseException $e)
+{
+    echo 'facebook SDK returned an error: ' . $e->getMessage();
+    exit;
+}
 ?>
