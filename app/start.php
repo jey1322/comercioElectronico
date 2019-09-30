@@ -10,7 +10,7 @@ use Facebook\GraphUser;
 use Facebook\GraphObject;
 use Facebook\FacebookRequestException;
 
-FacebookSession::setDefaultAplication($config['app_id'],$config['app_secret']);
+FacebookSession::setDefaultApplication($config['app_id'],$config['app_secret']);
 $helper= new FacebookRedirectLoginHelper('http://localhost/pow/comercioElectronico/sesion.php');
 try{
     $session= $helper ->getSessionFromRedirect();
