@@ -61,25 +61,18 @@ require_once 'app/start.php';
                     if (!isset($_SESSION['facebook']))
                     { ?>
                     <p>no ha iniciado sesion</p>
-                    <?php
-                    }
-                    else
-                    {
-                    ?>
-                        <p>Bienvenido
-                            <?php echo $facebook_user->getName(); ?>
-                        </p>
-                        <h1>Configuracion</h1>
-                <div class="jumbotron jumbotron-fluid">
+                    <h1>Configuracion</h1>
+                    <div class="jumbotron jumbotron-fluid">
                     <div class="container">
-                        <h1>agrega datos de entrega</h1>
+                        <h1>agregar datos de entrega</h1>
                         <h5>Vip-Lib es tu mejor opcion para realizar tus compras,</h5>
                         <br>
                         <div class="container">
 
                             <!-- Page Heading -->
                             <h1 class="my-4">
-                                <small>desarrolladores</small>
+                                <small>Necesitas iniciar sesion para poder realizar tu configuracion</small>
+                                
                             </h1>
                             <br>
                             <br>
@@ -91,6 +84,50 @@ require_once 'app/start.php';
                                 </div>
                                 <div class="col-md-5">
                                  
+                                </div>
+                            </div>
+                            <!-- /.row -->
+
+
+                        </div>
+                        <!-- /.container -->
+
+                    </div>
+                </div>
+                    <?php
+                    }
+                    else
+                    {
+                    ?>
+                        <p>Bienvenido
+                            <?php echo $facebook_user->getName(); ?>
+                        </p>
+                        <h1>Configuracion</h1>
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1>agregar datos de entrega</h1>
+                        <h5>Vip-Lib es tu mejor opcion para realizar tus compras,</h5>
+                        <br>
+                        <div class="container">
+
+                            <!-- Page Heading -->
+                            
+                            <br>
+                            
+
+                            <!-- Project One -->
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <form action="guardar.php" method="post" enctype="multipart/form-data">
+                                    <input class="btn btn-light btn-xl js-scroll-trigger" placeholder="Numero de telefono" type="number" name="m_nombre" id="m_nombre" maxlength="100" size="32">
+                        <br>
+                                    </form>
+                                   
+                                </div>
+                                <div class="col-md-5">
+                                 <form action="guardar.php" method="post" enctype="multipart/form-data">
+
+                                 </form>
                                 </div>
                             </div>
                             <!-- /.row -->

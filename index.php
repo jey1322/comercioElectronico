@@ -43,9 +43,7 @@ require_once 'app/start.php';
                     <li class="nav-item">
                         <a class="nav-link" href="sesion.php">Iniciar sesion / cerrar sesion</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="configuracion.php">configuracion de la cuenta</a>
-                    </li>
+                   
                     
 
                 </ul>
@@ -143,22 +141,26 @@ require_once 'app/start.php';
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="img/lib1.jpg" alt=""></a>
                             <div class="card-body">
-                                <!--  // <?php
-                                /*
+                                <?php
+                                
                                     $mysqli=new mysqli("localhost","root","","viplib");
-                                    $comando="SELECT nombre from libro where nombre='Bodas de Sangre' and cantidad > 0";
+                                    $comando="SELECT nombre FROM libros WHERE nombre='Bodas de Sangre' and cantidad > 0";
                                     $resultado=$mysqli->query($comando);
                                     if ($resultado->num_rows==0)
                                     {
-                                        echo"<h4>
-                                    Agotados
-                                </h4>";
+                                        echo"AGOTADOS";
                                     }
                                     else
                                     {
-                                        echo $usr['nombre'];
+                                       // $usr=$resultado->fetch_assoc();
+                                        //echo $usr['nombre'];
+                                        ?>
+                                            <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                        <?php
                                     }
-                                */?> -->
+                                    $resultado->free();
+                                    $mysqli->close();
+                                ?> 
                                 <h4 class="card-title">
                                     <a href="#">libro Bodas de Sangre</a>
                                 </h4>
