@@ -17,6 +17,7 @@ try{
     if ($session)
     {
         $_SESSION['facebook']=$session->getToken();
+        header('location: sesion.php');
     }
 }catch(Facebook\Exception\FacebookResponseException $e)
 {

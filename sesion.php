@@ -10,6 +10,12 @@ require_once 'app/start.php';
     <title>iniciar sesion</title>
 </head>
 <body>
-    
+    <?php
+    if (!isset($_SESSION['facebook']))
+    { ?>
+    <a href="#" class="btn btn-primary btn-xl">Inicia sesion con facebook</a>
+    <?php
+    }
+    ?>
 </body>
 </html>
