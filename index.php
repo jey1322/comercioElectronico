@@ -53,15 +53,30 @@
 
             <div class="col-lg-3">
 
-                <h1 class="my-4">Vip-Lib</h1>
-                <div class="list-group">
-                    <div class="card-footer">
-                        <h5>buscar por:</h5>
-                    </div>
-                    <a href="libros.html" class="list-group-item ">Libros</a>
-                    <a href="ropa.html" class="list-group-item">Ropa</a>
-                    <a href="tecnologia.html" class="list-group-item">Tecnologia</a>
-                </div>
+                <?php
+                    if (!isset($_SESSION['facebook']))
+                    { ?>
+                    <a href="<?php echo $helper->getLoginUrl($config['scopes']); ?>" class="btn btn-primary ">Inicia sesion con facebook</a>
+                    <?php
+                    }
+                    else
+                    {
+                    ?>
+                        <p>Bienvenido
+                            <?php echo $facebook_user->getName(); ?>
+                        </p>
+                        <a href="insesion.php" class="btn btn-primary">cerrar sesion</a>
+                        <?php }?>
+
+                        <h1 class="my-4">Vip-Lib</h1>
+                        <div class="list-group">
+                            <div class="card-footer">
+                                <h5>buscar por:</h5>
+                            </div>
+                            <a href="libros.html" class="list-group-item ">Libros</a>
+                            <a href="ropa.html" class="list-group-item">Ropa</a>
+                            <a href="tecnologia.html" class="list-group-item">Tecnologia</a>
+                        </div>
 
             </div>
             <!-- /.col-lg-3 -->
