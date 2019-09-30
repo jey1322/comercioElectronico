@@ -19,6 +19,15 @@ try{
         $_SESSION['facebook']=$session->getToken();
         header('location: sesion.php');
     }
+    if (isset($_SESSION['facebook']))
+    {
+        $session= new FacebookSession($_SESSION['facebook']);
+        $request = new FacebookRequest($session,'GET','/me');
+        $response = $request -> execute();
+        $graphObject= $response->getGraphObject(GraphUser::className());
+        $facebook_user=$graphObject;
+
+    }
 }catch(Facebook\Exception\FacebookResponseException $e)
 {
     echo 'facebook SDK returned an error: ' . $e->getMessage();

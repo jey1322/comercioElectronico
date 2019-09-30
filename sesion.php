@@ -13,9 +13,14 @@ require_once 'app/start.php';
     <?php
     if (!isset($_SESSION['facebook']))
     { ?>
-    <a href="<?php echo $helper->getLoginUrl(); ?>" class="btn btn-primary ">Inicia sesion con facebook</a>
+    <a href="<?php echo $helper->getLoginUrl($config['scopes']); ?>" class="btn btn-primary ">Inicia sesion con facebook</a>
     <?php
     }
+    else
+    {
     ?>
+    <p>Bienvenido <?php echo $facebook_user->getName(); ?></p>
+    <a href="insesion.php" class="btn btn-primary">cerrar sesion</a>
+    <?php }?>
 </body>
 </html>
