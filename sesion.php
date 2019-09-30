@@ -13,7 +13,7 @@ require_once 'app/start.php';
     <?php
     if (!isset($_SESSION['facebook']))
     { ?>
-    <a href="#" class="btn btn-primary btn-xl">Inicia sesion con facebook</a>
+    <a href="<?php echo $helper->getLoginUrl ?>" class="btn btn-primary ">Inicia sesion con facebook</a>
     <?php
     }
     ?>
