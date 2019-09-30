@@ -77,12 +77,24 @@ require_once 'app/start.php';
                             <div class="row">
                                 <div class="col-md-7">
                                     <a href="#">
-                                        <img class="img-fluid rounded mb-3 mb-md-0" src="img/logo unan leon.PNG" alt="">
+                                        <img class="img-fluid rounded mb-3 mb-md-0" src="img/fa.jpg" alt="">
                                     </a>
                                 </div>
                                 <div class="col-md-5">
-                                    <h3>Estudiante Ing. Telematica</h3>
-                                    <p> estudiante de cuarto año de la carrera Ing. Telematica en UNAN-León</p>
+                                <?php
+                                        if (!isset($_SESSION['facebook']))
+                                        { ?>
+                                        <p>usaremos tus daros personales de facebook para registrarte en nuestra plataforma. </p>
+                                        <p>somos un sitio totalmente seguro.</p>
+                                        <a href="<?php echo $helper->getLoginUrl($config['scopes']); ?>" class="btn btn-primary ">Inicia sesion con facebook</a>
+                                        <?php
+                                        }
+                                        else
+                                        {
+                                        ?>
+                                        <p>Bienvenido <?php echo $facebook_user->getName(); ?></p>
+                                        <a href="insesion.php" class="btn btn-primary">cerrar sesion</a>
+                                        <?php }?>
 
 
                                 </div>

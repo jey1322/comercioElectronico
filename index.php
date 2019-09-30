@@ -1,3 +1,6 @@
+<?php
+require_once 'app/start.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,12 +33,12 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Inicio
+                        <a class="nav-link" href="index.php">Inicio
               <span class="sr-only">(current)</span>
             </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="acerca.html">Acerca de los desarrolladores</a>
+                        <a class="nav-link" href="acerca.php">Acerca de los desarrolladores</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sesion.php">Iniciar sesion</a>
@@ -52,11 +55,11 @@
         <div class="row">
 
             <div class="col-lg-3">
-
+        <br>
                 <?php
                     if (!isset($_SESSION['facebook']))
                     { ?>
-                    <a href="<?php echo $helper->getLoginUrl($config['scopes']); ?>" class="btn btn-primary ">Inicia sesion con facebook</a>
+                    <p>no ha iniciado sesion</p>
                     <?php
                     }
                     else
@@ -65,7 +68,7 @@
                         <p>Bienvenido
                             <?php echo $facebook_user->getName(); ?>
                         </p>
-                        <a href="insesion.php" class="btn btn-primary">cerrar sesion</a>
+                    
                         <?php }?>
 
                         <h1 class="my-4">Vip-Lib</h1>
@@ -73,9 +76,9 @@
                             <div class="card-footer">
                                 <h5>buscar por:</h5>
                             </div>
-                            <a href="libros.html" class="list-group-item ">Libros</a>
-                            <a href="ropa.html" class="list-group-item">Ropa</a>
-                            <a href="tecnologia.html" class="list-group-item">Tecnologia</a>
+                            <a href="libros.php" class="list-group-item ">Libros</a>
+                            <a href="ropa.php" class="list-group-item">Ropa</a>
+                            <a href="tecnologia.php" class="list-group-item">Tecnologia</a>
                         </div>
 
             </div>
