@@ -129,7 +129,26 @@ require_once 'app/start.php';
                                 <p class="card-text">procesador: intel corei9 Gold</p>
                                 <p class="card-text">Disco duro solido: 2 terabyte</p>
                                 <p class="card-text">Memoria RAM: 128 gigabyte</p>
-
+                                <?php
+                                
+                                $mysqli=new mysqli("localhost","root","","viplib");
+                                $comando="SELECT nombre FROM tecnologia WHERE nombre='pc gamer' and cantidad > 0";
+                                $resultado=$mysqli->query($comando);
+                                if ($resultado->num_rows==0)
+                                {
+                                    echo"AGOTADOS";
+                                }
+                                else
+                                {
+                                   // $usr=$resultado->fetch_assoc();
+                                    //echo $usr['nombre'];
+                                    ?>
+                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                    <?php
+                                }
+                                $resultado->free();
+                                $mysqli->close();
+                            ?> 
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -141,31 +160,32 @@ require_once 'app/start.php';
                         <div class="card h-100">
                             <a href="#"><img class="card-img-top" src="img/lib1.jpg" alt=""></a>
                             <div class="card-body">
-                                <?php
                                 
-                                    $mysqli=new mysqli("localhost","root","","viplib");
-                                    $comando="SELECT nombre FROM libros WHERE nombre='Bodas de Sangre' and cantidad > 0";
-                                    $resultado=$mysqli->query($comando);
-                                    if ($resultado->num_rows==0)
-                                    {
-                                        echo"AGOTADOS";
-                                    }
-                                    else
-                                    {
-                                       // $usr=$resultado->fetch_assoc();
-                                        //echo $usr['nombre'];
-                                        ?>
-                                            <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
-                                        <?php
-                                    }
-                                    $resultado->free();
-                                    $mysqli->close();
-                                ?> 
                                 <h4 class="card-title">
                                     <a href="#">libro Bodas de Sangre</a>
                                 </h4>
                                 <h5>$9.99</h5>
                                 <p class="card-text">Bodas de sangre es una tragedia en versos y en prosas del escritor español Federico Garcia Lorca</p>
+                                <?php
+                                
+                                $mysqli=new mysqli("localhost","root","","viplib");
+                                $comando="SELECT nombre FROM libros WHERE nombre='Bodas de Sangre' and cantidad > 0";
+                                $resultado=$mysqli->query($comando);
+                                if ($resultado->num_rows==0)
+                                {
+                                    echo"AGOTADOS";
+                                }
+                                else
+                                {
+                                   // $usr=$resultado->fetch_assoc();
+                                    //echo $usr['nombre'];
+                                    ?>
+                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                    <?php
+                                }
+                                $resultado->free();
+                                $mysqli->close();
+                            ?> 
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -182,6 +202,26 @@ require_once 'app/start.php';
                                 </h4>
                                 <h5>$14.99</h5>
                                 <p class="card-text">la mejor prenda para la mujer</p>
+                                <?php
+                                
+                                $mysqli=new mysqli("localhost","root","","viplib");
+                                $comando="SELECT nombre FROM ropa WHERE nombre='crop top' and cantidad > 0";
+                                $resultado=$mysqli->query($comando);
+                                if ($resultado->num_rows==0)
+                                {
+                                    echo"AGOTADOS";
+                                }
+                                else
+                                {
+                                   // $usr=$resultado->fetch_assoc();
+                                    //echo $usr['nombre'];
+                                    ?>
+                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                    <?php
+                                }
+                                $resultado->free();
+                                $mysqli->close();
+                            ?> 
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -198,6 +238,32 @@ require_once 'app/start.php';
                                 </h4>
                                 <h5>$39.99</h5>
                                 <p class="card-text">Xiaomi mi smart band 4. el mejor reloj inteligente</p>
+                               
+                            </div>
+                            <div>
+                            <?php
+                                
+                                $mysqli=new mysqli("localhost","root","","viplib");
+                                $comando="SELECT nombre FROM tecnologia WHERE nombre='xiaomi mi band' and cantidad > 0";
+                                $resultado=$mysqli->query($comando);
+                                if ($resultado->num_rows==0)
+                                {
+                                    echo"<center><p>AGOTADOS</p></center>";
+                                }
+                                else
+                                {
+                                   // $usr=$resultado->fetch_assoc();
+                                    //echo $usr['nombre'];
+                                    ?>
+                                    <center>
+                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                        <br>
+                                    </center>
+                                    <?php
+                                }
+                                $resultado->free();
+                                $mysqli->close();
+                            ?> 
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -214,6 +280,32 @@ require_once 'app/start.php';
                                 </h4>
                                 <h5>$9.99</h5>
                                 <p class="card-text">como agua para chocolate, novela en doce entregas con recetas, amores y remedios caseros.</p>
+                               
+                            </div>
+                            <div>
+                            <?php
+                                
+                                $mysqli=new mysqli("localhost","root","","viplib");
+                                $comando="SELECT nombre FROM libros WHERE nombre='como agua para chocolate' and cantidad > 0";
+                                $resultado=$mysqli->query($comando);
+                                if ($resultado->num_rows==0)
+                                {
+                                    echo"<center><p>AGOTADOS</p></center>";
+                                }
+                                else
+                                {
+                                   // $usr=$resultado->fetch_assoc();
+                                    //echo $usr['nombre'];
+                                    ?>
+                                    <center>
+                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                        <br>
+                                    </center>
+                                    <?php
+                                }
+                                $resultado->free();
+                                $mysqli->close();
+                            ?>
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
@@ -230,6 +322,31 @@ require_once 'app/start.php';
                                 </h4>
                                 <h5>$24.99</h5>
                                 <p class="card-text">linea Megan Fox!</p>
+                               
+                            </div>
+                            <div>
+                            <?php
+                                
+                                $mysqli=new mysqli("localhost","root","","viplib");
+                                $comando="SELECT nombre FROM ropa WHERE nombre='Traje de baño' and cantidad > 0";
+                                $resultado=$mysqli->query($comando);
+                                if ($resultado->num_rows==0)
+                                {
+                                    echo"<center> <p>AGOTADOS</p></center>";
+                                }
+                                else
+                                {
+                                   // $usr=$resultado->fetch_assoc();
+                                    //echo $usr['nombre'];
+                                    ?>
+                                    <center>
+                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                        </center>
+                                    <?php
+                                }
+                                $resultado->free();
+                                $mysqli->close();
+                            ?> 
                             </div>
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
