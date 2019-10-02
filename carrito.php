@@ -16,14 +16,19 @@ else
 {
    // $usr=$resultado->fetch_assoc();
     //echo $usr['nombre'];
+    $usr=$resultado->fetch_assoc();
+    echo "articulo: ".$usr['nombre']."<br>";
+    echo "precio: ".$usr['precio']."<br>";
+    echo "cantidad disponible: ".$usr['cantidad']."<br>";
     ?>
-        <p>libro boda de sangre</p>
-        <p>precio 10$</p>
+        
         <a href="#" class="btn btn-primary">comprar</a>
+   
     <?php
 }
 $resultado->free();
 $mysqli->close();
-
 ?>
 
+
+<a href="index.php">cancelar</a>

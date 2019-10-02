@@ -132,7 +132,7 @@ require_once 'app/start.php';
                                 <?php
                                 
                                 $mysqli=new mysqli("localhost","root","","viplib");
-                                $comando="SELECT nombre FROM tecnologia WHERE nombre='pc gamer' and cantidad > 0";
+                                $comando="SELECT * FROM tecnologia WHERE nombre='pc gamer' and cantidad > 0";
                                 $resultado=$mysqli->query($comando);
                                 if ($resultado->num_rows==0)
                                 {
@@ -143,7 +143,7 @@ require_once 'app/start.php';
                                    // $usr=$resultado->fetch_assoc();
                                     //echo $usr['nombre'];
                                     ?>
-                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                         <a href="carrito.php?capitulo=<?=$comando?>" class="btn btn-primary">agregar al carrito</a>
                                     <?php
                                 }
                                 $resultado->free();
@@ -169,7 +169,7 @@ require_once 'app/start.php';
                                 <?php
                                 
                                 $mysqli=new mysqli("localhost","root","","viplib");
-                                $comando="SELECT nombre FROM libros WHERE nombre='Bodas de Sangre' and cantidad > 0";
+                                $comando="SELECT * FROM libros WHERE nombre='Bodas de Sangre' and cantidad > 0";
                                 $resultado=$mysqli->query($comando);
                               
                                 if ($resultado->num_rows==0)
