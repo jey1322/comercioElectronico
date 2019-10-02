@@ -136,14 +136,16 @@ require_once 'app/start.php';
                                 $resultado=$mysqli->query($comando);
                                 if ($resultado->num_rows==0)
                                 {
-                                    echo"AGOTADOS";
+                                    echo"<center>AGOTADOS</center>";
                                 }
                                 else
                                 {
                                    // $usr=$resultado->fetch_assoc();
                                     //echo $usr['nombre'];
                                     ?>
-                                         <a href="carrito.php?capitulo=<?=$comando?>" class="btn btn-primary">agregar al carrito</a>
+                                    <center>
+                                         <a href="carrito.php?capitulo=<?=$comando?>" class="btn btn-primary">comprar</a>
+                                    </center>
                                     <?php
                                 }
                                 $resultado->free();
@@ -174,14 +176,16 @@ require_once 'app/start.php';
                               
                                 if ($resultado->num_rows==0)
                                 {
-                                    echo"AGOTADOS";
+                                    echo"<center>AGOTADOS</center>";
                                 }
                                 else
                                 {
                                    // $usr=$resultado->fetch_assoc();
                                     //echo $usr['nombre'];
                                     ?>
-                                        <a href="carrito.php?capitulo=<?=$comando?>" class="btn btn-primary">agregar al carrito</a>
+                                    <center>
+                                    <a href="carrito.php?capitulo=<?=$comando?>" class="btn btn-primary">comprar</a>
+                                    </center>
                                     <?php
                                 }
                                 $resultado->free();
@@ -206,18 +210,20 @@ require_once 'app/start.php';
                                 <?php
                                 
                                 $mysqli=new mysqli("localhost","root","","viplib");
-                                $comando="SELECT nombre FROM ropa WHERE nombre='crop top' and cantidad > 0";
+                                $comando="SELECT * FROM ropa WHERE nombre='crop top' and cantidad > 0";
                                 $resultado=$mysqli->query($comando);
                                 if ($resultado->num_rows==0)
                                 {
-                                    echo"AGOTADOS";
+                                    echo"<center>AGOTADOS</center>";
                                 }
                                 else
                                 {
                                    // $usr=$resultado->fetch_assoc();
                                     //echo $usr['nombre'];
                                     ?>
-                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                    <center>
+                                    <a href="carrito.php?capitulo=<?=$comando?>" class="btn btn-primary">comprar</a>
+                                    </center>
                                     <?php
                                 }
                                 $resultado->free();
@@ -240,12 +246,10 @@ require_once 'app/start.php';
                                 <h5>$39.99</h5>
                                 <p class="card-text">Xiaomi mi smart band 4. el mejor reloj inteligente</p>
                                
-                            </div>
-                            <div>
                             <?php
                                 
                                 $mysqli=new mysqli("localhost","root","","viplib");
-                                $comando="SELECT nombre FROM tecnologia WHERE nombre='xiaomi mi band' and cantidad > 0";
+                                $comando="SELECT * FROM tecnologia WHERE nombre='xiaomi mi band' and cantidad > 0";
                                 $resultado=$mysqli->query($comando);
                                 if ($resultado->num_rows==0)
                                 {
@@ -257,7 +261,7 @@ require_once 'app/start.php';
                                     //echo $usr['nombre'];
                                     ?>
                                     <center>
-                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                    <a href="carrito.php?capitulo=<?=$comando?>" class="btn btn-primary">comprar</a>
                                         <br>
                                     </center>
                                     <?php
@@ -266,6 +270,8 @@ require_once 'app/start.php';
                                 $mysqli->close();
                             ?> 
                             </div>
+                            
+                            
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                             </div>
@@ -281,13 +287,11 @@ require_once 'app/start.php';
                                 </h4>
                                 <h5>$9.99</h5>
                                 <p class="card-text">como agua para chocolate, novela en doce entregas con recetas, amores y remedios caseros.</p>
-                               
-                            </div>
-                            <div>
+                              
                             <?php
                                 
                                 $mysqli=new mysqli("localhost","root","","viplib");
-                                $comando="SELECT nombre FROM libros WHERE nombre='como agua para chocolate' and cantidad > 0";
+                                $comando="SELECT * FROM libros WHERE nombre='como agua para chocolate' and cantidad > 0";
                                 $resultado=$mysqli->query($comando);
                                 if ($resultado->num_rows==0)
                                 {
@@ -299,7 +303,7 @@ require_once 'app/start.php';
                                     //echo $usr['nombre'];
                                     ?>
                                     <center>
-                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a>
+                                    <a href="carrito.php?capitulo=<?=$comando?>" class="btn btn-primary">comprar</a>
                                         <br>
                                     </center>
                                     <?php
@@ -307,7 +311,10 @@ require_once 'app/start.php';
                                 $resultado->free();
                                 $mysqli->close();
                             ?>
+                            
+
                             </div>
+                          
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                             </div>
@@ -325,11 +332,11 @@ require_once 'app/start.php';
                                 <p class="card-text">linea Megan Fox!</p>
                                
                             </div>
-                            <div>
+                            
                             <?php
                                 
                                 $mysqli=new mysqli("localhost","root","","viplib");
-                                $comando="SELECT nombre FROM ropa WHERE nombre='Traje de baño' and cantidad > 0";
+                                $comando="SELECT * FROM ropa WHERE nombre='Traje de baño' and cantidad > 0";
                                 $resultado=$mysqli->query($comando);
                                 if ($resultado->num_rows==0)
                                 {
@@ -341,7 +348,7 @@ require_once 'app/start.php';
                                     //echo $usr['nombre'];
                                     ?>
                                     <center>
-                                        <a href="carrito.php" class="btn btn-primary">agregar al carrito</a> 
+                                    <a href="carrito.php?capitulo=<?=$comando?>" class="btn btn-primary">comprar</a> 
                                         <br>
                                         </center>
                                     <?php
@@ -349,7 +356,7 @@ require_once 'app/start.php';
                                 $resultado->free();
                                 $mysqli->close();
                             ?> 
-                            </div>
+                            
                             <div class="card-footer">
                                 <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                             </div>
