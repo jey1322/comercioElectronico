@@ -96,6 +96,10 @@ require_once 'app/start.php';
                                 <div class="col-md-5">
                                     <h3>Estudiante Ing. Telematica</h3>
                                     <p> estudiante de cuarto año de la carrera Ing. Telematica en UNAN-León</p>
+                                    <h5>INTEGRANTES:</h5>
+                                    <p>Jairo Antonio Paniagua</p>
+                                    <p>lennox monge cisneros</p>
+                                    <p>Kevin alexander altamirano</p>
 
 
                                 </div>

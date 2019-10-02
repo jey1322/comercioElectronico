@@ -206,4 +206,24 @@ $mysqli->close();
 ?>
 
 
-<a href="index.php">cancelar</a>
+<a href="index.php" class="btn btn-primary">cancelar</a>
+
+
+
+                                   
+<form action="guardar.php" method="post" enctype="multipart/form-data">
+                                    <center>
+                                    <input class="btn btn-light btn-xl js-scroll-trigger" placeholder="Numero de telefono" type="number" name="telefono" id="telefono" maxlength="12" size="32">
+                                    <br>
+                                    <br>
+                                    <input class="btn btn-light btn-xl js-scroll-trigger" placeholder="Direccion donde habita" type="text" name="direccion" id="direccion" maxlength="100" size="32">
+                                    <br>
+                                    <br>
+                                    <input class="btn btn-light btn-xl js-scroll-trigger" placeholder="codigo postal" type="text" name="codigo_postal" id="codigo_postal" maxlength="10" size="32">
+                                    <br> <br>
+                                    <input type="hidden" name="insertar">
+                                    
+                                    <input class="btn btn-primary" type="submit" value="enviar" value="comprar">
+                                    </center>   
+                                </form>
+                                   

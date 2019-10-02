@@ -23,29 +23,7 @@ require_once 'app/start.php';
 
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            
-            <h5 class="navbar-brand">"Los mejores en precios"</h5>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Inicio
-              <span class="sr-only">(current)</span>
-            </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="acerca.php">Acerca de los desarrolladores</a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+   
 
     <!-- Page Content -->
     <div class="container">
@@ -61,18 +39,21 @@ require_once 'app/start.php';
                     if (!isset($_SESSION['facebook']))
                     { ?>
                     <p>no ha iniciado sesion</p>
-                    <h1>Configuracion</h1>
+                    <h1>Realizar compra</h1>
                     <div class="jumbotron jumbotron-fluid">
                     <div class="container">
-                        <h1>agregar datos de entrega</h1>
+                        <h3>Agregar datos de entrega</h3>
                         <h5>Vip-Lib es tu mejor opcion para realizar tus compras,</h5>
                         <br>
                         <div class="container">
 
                             <!-- Page Heading -->
                             <h1 class="my-4">
-                                <small>Necesitas iniciar sesion para poder realizar tu configuracion</small>
-                                
+                                <small>Necesitas iniciar sesion para poder realizar tu compra</small> <br><br>
+                                <a href="sesion.php" class="btn btn-primary">Iniciar sesion</a>
+
+                                <a href="index.php" class="btn btn-primary">cancelar</a>
+
                             </h1>
                             <br>
                             <br>
@@ -102,10 +83,10 @@ require_once 'app/start.php';
                         <p>Bienvenido
                             <?php echo $facebook_user->getName(); ?>
                         </p>
-                        <h1>Configuracion</h1>
+                        <h1>Realizar compra</h1>
                 <div class="jumbotron jumbotron-fluid">
                     <div class="container">
-                        <h1>agregar datos de entrega</h1>
+                        <h3>agregar datos de entrega</h3>
                         <h5>Vip-Lib es tu mejor opcion para realizar tus compras,</h5>
                         <br>
                         <div class="container">
@@ -118,16 +99,58 @@ require_once 'app/start.php';
                             <!-- Project One -->
                             <div class="row">
                                 <div class="col-md-7">
-                                    <form action="guardar.php" method="post" enctype="multipart/form-data">
-                                    <input class="btn btn-light btn-xl js-scroll-trigger" placeholder="Numero de telefono" type="number" name="m_nombre" id="m_nombre" maxlength="100" size="32">
-                        <br>
-                                    </form>
+                                   
+                                   
+<form action="guardar.php" method="post" enctype="multipart/form-data">
+                                    <center>
+                                    <input class="btn btn-light btn-xl js-scroll-trigger" placeholder="Numero de telefono" type="number" name="telefono" id="telefono" maxlength="12" size="32">
+                                    <br>
+                                    <br>
+                                    <input class="btn btn-light btn-xl js-scroll-trigger" placeholder="Direccion donde habita" type="text" name="direccion" id="direccion" maxlength="100" size="32">
+                                    <br>
+                                    <br>
+                                    <input class="btn btn-light btn-xl js-scroll-trigger" placeholder="codigo postal" type="text" name="codigo_postal" id="codigo_postal" maxlength="10" size="32">
+                                    <br> <br>
+                                    <input type="hidden" name="insertar">
+                                    
+                                    <input class="btn btn-primary" type="submit" value="enviar" value="comprar">
+                                    </center>   
+                                </form>
                                    
                                 </div>
-                                <div class="col-md-5">
-                                 <form action="guardar.php" method="post" enctype="multipart/form-data">
 
-                                 </form>
+
+                                <div class="col-md-5">
+                                <?php
+                                $mysqli=new mysqli("localhost","root","","viplib");
+                                $comando=$_GET['capitulo'];
+                                $resultado=$mysqli->query($comando);
+                                if ($resultado->num_rows==0)
+                                {
+                                    echo"AGOTADOS";
+                                }
+                                else
+                                {
+                                // $usr=$resultado->fetch_assoc();
+                                    //echo $usr['nombre'];
+
+                                    $usr=$resultado->fetch_assoc();
+                                    echo "<center><br>";
+                                    echo "articulo: ".$usr['nombre']."<br>";
+                                    echo "precio: ".$usr['precio']."<br>";
+                                    echo "cantidad disponible: ".$usr['cantidad']."<br><br>";
+                                    echo "</center>";
+                                    ?>
+                                        <center>
+                                        <a href="index.php" class="btn btn-primary">cancelar</a>
+                                        <br>
+                                        </center>
+                                    <?php
+                                }
+                                $resultado->free();
+                                $mysqli->close();
+                                ?>
+                                
                                 </div>
                             </div>
                             <!-- /.row -->
@@ -135,6 +158,11 @@ require_once 'app/start.php';
 
                         </div>
                         <!-- /.container -->
+                                
+
+
+                       
+
 
                     </div>
                 </div>
